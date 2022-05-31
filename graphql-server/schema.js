@@ -12,16 +12,21 @@ type Query{
 }
 
 type Mutation{
-      addNewStudent(student:studentInput):School
+      addNewStudent(firstName:String!,lastName:String!,birthDate:String!):SchoolType!
 }
 
 
 input studentInput{
+   id:ID
    firstName:String,
    lastName:String,
    birthDate:String 
 }
-
+type SchoolType{
+   firstName:String,
+   lastName:String,
+   birthDate:String 
+}
 
 type School{
    id:ID!

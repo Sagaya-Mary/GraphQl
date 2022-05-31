@@ -14,6 +14,13 @@ const SchoolReducers = (state = intialStates, action) => {
             console.log(action.payload);
             newState.school = action.payload;
             break;
+        case ActionTypes.GET_BYID_STUDENT:
+            console.log(action.payload);
+            newState.school = action.payload;
+            break;
+        case ActionTypes.ADD_STUDENT:
+
+            break;
 
         default:
             newState = state;

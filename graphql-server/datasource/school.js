@@ -5,13 +5,6 @@ class SchoolAPI extends RESTDataSource{
         super();
         this.baseURL = "http://localhost:8585/students";
     }
-
-    // async getStudentById(id){
-    //     const data = await this.get(`/findbyid/${id}`);
-    //     return data;
-    // }
-
-    
     async getAllStudents(){
         const data = await this.get(`/findall`);
         return data
@@ -22,7 +15,7 @@ class SchoolAPI extends RESTDataSource{
     }
     async addNewAllStudent(student){
         return this.post(
-            `add`, // path
+            `/add`, // path
             student, // request body
           );
     }

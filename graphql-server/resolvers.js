@@ -1,3 +1,5 @@
+const { first } = require("lodash");
+
 module.exports = {
     Query: {
         school: (parent, args, { dataSources }, info) => {
@@ -10,20 +12,21 @@ module.exports = {
     },
     //  Mutation:{
     //     addNewStudent: (parent,args,{dataSources},info) => {
-    //         // const { firstName, lastName,birthDate } = args;
+    //          const { firstName, lastName,birthDate } = args;
     //        // const args={ firstName, lastName,birthDate};
-    //         return dataSources.schoolAPI.addNewAllStudent(args);
+    //         return dataSources.schoolAPI.addNewAllStudent(firstName,lastName,birthDate);
     //     }
     //  }
-    // Mutation:{
-    //     addNewStudent: async (root, args, context) => {
-    //         const { firstName, lastName,birthDate } = args;
-    //         const newStudent = await context.dataSources.schoolAPI.addNewAllStudent.addNewStudent({firstName, lastName,birthDate })
-    //         return {
-    //           id: newStudent.id,
-    //           firstName
+    Mutation:{
+        addNewStudent: async (root, args, context) => {
+            const { firstName, lastName,birthDate } = args;
+            const newStudent = await context.dataSources.schoolAPI.addNewAllStudent({firstName, lastName,birthDate })
+            return {
+              id: newStudent.id,
+              firstName,
+              lastName,birthDate
 
-    //         }
-    //       }
-    //     }
+            }
+          }
+        }
 }

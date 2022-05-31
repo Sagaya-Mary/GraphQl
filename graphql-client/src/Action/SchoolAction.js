@@ -8,12 +8,18 @@ export const getAllStudents = (school) => {
         payload:school
     }
 }
-export function GetAllStudent(dst){
-   
-    const {data,loading}=useQuery(FETCH_USER);
-    return(dispatch)=>{ 
-        console.log(data)
-        dispatch(getAllStudents(data.dst))
+
+export const getStudentById =(school)=>{
+    return{
+        type:ActionTypes.GET_BYID_STUDENT,
+        payload:school
     }
-   
 }
+
+export const addStudent=()=>{
+    return{
+        type:ActionTypes.ADD_STUDENT,
+        
+    }
+}
+

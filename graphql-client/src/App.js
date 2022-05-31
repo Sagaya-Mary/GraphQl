@@ -1,11 +1,14 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import ViewStudent from './Component/SingleUser';
+
 import RouterPath from './RouterPath/RouterPath';
 import { Provider } from 'react-redux';
 import Store from '../src/Store/Store'
+import Header from './Component/Header';
+
+
 
 
 function App() {
@@ -20,8 +23,9 @@ function App() {
     <div className="App">
       <Provider store={Store()}>
      <ApolloProvider client={client}>
-     
-       <RouterPath/>
+    <Header/>
+    <RouterPath/>
+  
      </ApolloProvider>
      </Provider>
     </div>
